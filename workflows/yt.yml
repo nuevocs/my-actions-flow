@@ -1,0 +1,17 @@
+on:
+  youtube:
+    channel_id: @user-yv9rt8ym6k
+jobs:
+  print:
+    name: Print
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Outputs
+        env:
+          title: ${{on.youtube.outputs.title}}
+          description: ${{on.youtube.outputs.description}}
+          link: ${{on.youtube.outputs.link}}
+        run: |
+          echo title: $title
+          echo description: $description
+          echo link: $link
