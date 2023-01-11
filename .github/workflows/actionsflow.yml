@@ -1,11 +1,11 @@
 name: Actionsflow
 on:
-  # schedule:
-  #   - cron: "*/15 * * * *"
-  push:
+   schedule:
+    - cron: "*/55 * * * *"
+push:
     branches:
       - main
-  repository_dispatch:
+repository_dispatch:
   workflow_dispatch:
     inputs:
       include:
