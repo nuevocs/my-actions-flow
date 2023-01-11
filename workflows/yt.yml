@@ -1,6 +1,6 @@
 on:
   youtube:
-    channel_id: @user-yv9rt8ym6k
+    channel_id: UC8Md6Zy3HPN5rHWKhm5qhqg
 jobs:
   print:
     name: Print
