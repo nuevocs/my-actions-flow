@@ -1,5 +1,8 @@
 name: Actionsflow
+
 on:
+  youtube:
+    channel_id: UC8Md6Zy3HPN5rHWKhm5qhqg
    #schedule:
     #- cron: "*/55 * * * *"
 push:
