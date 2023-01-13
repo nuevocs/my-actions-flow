@@ -15,3 +15,10 @@ jobs:
           echo title: $title
           echo description: $description
           echo link: $link
+      - name: create-json
+        id: create-json-2  # Second ID
+        uses: jsdaniell/create-json@v1.2.2
+        with:
+          name: "other.json"
+          json: '{"name":$title, "link":$link}'
+          dir: 'src/'
