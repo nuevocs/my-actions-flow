@@ -22,3 +22,16 @@ jobs:
           name: "other.json"
           json: '{"name":$title, "link":$link}'
           dir: 'src/'
+          
+       - name: commit files
+         run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "update data" -a || echo "No changes to commit"
+          
+       - name: push changes
+         uses: ad-m/github-push-action@master
+         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
