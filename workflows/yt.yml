@@ -22,7 +22,7 @@ jobs:
           
       - name: create-json
         id: create-json-2  # Second ID
-        uses: jsdaniell/create-json@v1.2.2
+        uses: jsdaniell/create-json@v1.2.0
         with:
           name: "other.json"
           json: '{"name":$title, "link":$link}'
