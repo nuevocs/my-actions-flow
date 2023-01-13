@@ -8,16 +8,7 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v3
-      - name: setup python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9.5' # install the python version needed
-      - name: install python packages
-        run: |
-          python3 -m pip install --upgrade pip
-          pip3 install -r requirements.txt
-      - name: execute py script
-        run: python3 main.py #NAME OF YOUR FILE HERE!!
+
       - name: Print Outputs
         env:
           title: ${{on.youtube.outputs.title}}
@@ -27,13 +18,16 @@ jobs:
           echo title: $title
           echo description: $description
           echo link: $link
+          
+          
       - name: create-json
         id: create-json-2  # Second ID
         uses: jsdaniell/create-json@v1.2.2
         with:
           name: "other.json"
           json: '{"name":$title, "link":$link}'
-          dir: 'src/'
+          dir: '/'
+          
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
